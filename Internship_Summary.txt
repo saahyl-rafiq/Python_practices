@@ -1,0 +1,59 @@
+Summary of Learned Concepts during internship .
+===============================================
+
+Started from python videos to get an insight into language.
+
+Practiced from Learn Python the hard way.Learned about conditional statements decision making, Data 
+structures & class overview. Worked on Lists, Dictionaries, Tuples and Classes. Concept of Inheritance 
+Handling exceptions and writing assertions
+Solved 3 coding Challanges in Python.
+
+Worked on File operation modes. File read/write. Counting words in a file.
+
+Basics of CSV files,reading from and writing to a CSV file in python
+Basics of JSON files,reading from and writing to json in python.
+
+Writing python programmes to convert CSV into JSON and vice versa,
+
+Solved challanges to convert CSV into JSON with keys in uppercase.
+Overview of Jsonlines format and writing a jsonl file in python.
+
+Learn about Git from doc. Created an account on Github. Learned setting up repositories pushing code 
+to git and basic commands like status, add, commit, push.
+
+Basics on what is elastic search? Configured elastic search on server.
+
+Learned about Redis repository. Worked with various data types available in Redis. Performing operations
+like push, pop, del, range etc on a Redis server.
+
+Learned about Scraping. What is Scraping? Manually scraping contentents of a website into a CSV file.
+Detailed Scraping concepts while working with Python Scrapy framework.
+Studied XPATH extraction for extacting data from XML DOM structures.
+Wrote some base spiders for crawling data from websites. Learned about crawl spiders to crawl redirecting
+links in a websitse,also wrote a crawl spider.
+
+Learned about Selinium framework.Basics of traversing sites using Selinium.
+
+Wrote a Python script that checks for certain attribute match in two separate CSV files and writes
+matched rows to another file.
+
+Basics of HTML and CSS. Various HTML tags such and CSS concepts like positioning, margin, padding etc.
+
+Wrote some spiders for crawling reviews and ratings from different sites.
+
+Learned about Scapy Cluster framework. Setup Scrapy Cluster on local machine.
+Learned about Zookeeper, creating topics with the help of zookeeper. Using Apache Kafka for creating a 
+Producer-Consumer channel.
+
+Understood the working of the Turner Project. Deployed the Turner code on a local machine. Executed
+files to upload urls to redis, crawl data from requests by manually running a spider locally. Download
+crawled items, parse and clean the crawled data.
+
+Assisted Mr.Yaseen in a live project by writing some of the base spiders for crawling required data 
+from websites like yahoo.com,rent.com,apartmentguide.com and yellowpages.com .
+
+Started project Turner on live servers.
+
+
+
+
