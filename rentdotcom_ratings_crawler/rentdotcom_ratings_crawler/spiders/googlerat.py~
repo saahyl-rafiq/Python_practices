@@ -1,0 +1,53 @@
+from time import sleep
+from scrapy import Spider, Request, Selector
+from selenium import webdriver
+from generalcrawler.items import GeneralcrawlerItem
+
+
+class GoogleSpider(Spider):
+    name = 'google'
+    allowed_domains = ['plus.google.com']
+    start_urls = ['https://plus.google.com/111575640065258175954/about',
+                  'https://plus.google.com/+CopperCreekApartmentsLasVegas/about?hl=en',
+                  ]
+    items = []
+
+    def __init__(self):
+        self.driver = webdriver.Firefox()
+
+    def parse(self, response):
+        self.getsel(response)
+        return self.items
+
+    def getsel(self, response):
+        print 'k'*50
+        self.driver.get(response.url)
+        users = response.xpath('//span[@class="d-s L5 r0"]')
+        for ck in users:
+            next = self.driver.find_element_by_xpath('//span[@class="d-s L5 r0"]')
+            next.click()
+            selen_html = self.driver.page_source
+            hxs = Selector(text=selen_html)
+            sleep(5)
+        selen_html = self.driver.page_source
+        hxs = Selector(text=selen_html)
+        self.parse_second(hxs)
+        sleep(15)
+        return
+
+    def parse_second(self, response):
+        print 'you are here!'
+        response = response.xpath('//div[@class="ojb"]')
+        for user in response:
+            item = GeneralcrawlerItem()
+            username = user.xpath('span[@class="Gl aCb Khb"]/a/text()').extract()
+            if not username:
+                item['username'] = user.xpath('span[@class="Gl aCb Mlc"]/text()').extract()
+            else:
+                item['username'] = username
+            item['user_rating'] = len(user.xpath('div/div/span[@class="b-db-ac b-db-ac-th"]').extract())
+            item['review_date'] = user.xpath('div/div/span[@class="VUb"]/text()').extract()
+            item['comment'] = user.xpath('div/div/span[@class="GKa oAa"]/text()').extract()
+            self.items.append(item)
+            return
+
